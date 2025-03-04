@@ -1,4 +1,4 @@
-﻿#include <iostream>
+/*#include <iostream>
 #include <cstdlib>
 #include <ctime>
 
@@ -49,5 +49,44 @@ int main() {
     cout << " ]" << endl;
 
     cout << "el -: " << count << endl;
+    return 0;
+}
+
+*/
+
+//                      laba 1 zadanie 3
+#include <cstdio>
+#include <cstring>
+
+char* my_strchr(char* s, int c) {
+    while (*s != '\0') {
+        if (*s == c) {
+            return s;
+        }
+        s++;
+    }
+    return nullptr;
+}
+
+int main() {
+    char str[] = "dachshunds rule the world";
+    char ch = 'u';
+
+    char* result_std = strchr(str, ch);
+    if (result_std != nullptr) {
+        printf("standart func simvol '%c': \"%s\"\n", ch, result_std);
+    }
+    else {
+        printf("standart func simvol '%c' not found.\n", ch);
+    }
+
+    char* result_custom = my_strchr(str, ch);
+    if (result_custom != nullptr) {
+        printf("my func simvol '%c' : \"%s\"\n", ch, result_custom);
+    }
+    else {
+        printf("my func simvol '%c' not found.\n", ch);
+    }
+
     return 0;
 }
